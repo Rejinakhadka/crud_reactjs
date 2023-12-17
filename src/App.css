@@ -1,0 +1,11 @@
+body {
+    background-color: darkgray;
+    min-height: 70vh;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(198, 1%, 29%);
+    font-size: 130%;
+  }
