@@ -1,9 +1,6 @@
-/* table.css */
-
-/* Common styles for both large and small screens */
 .table-container {
   margin-top: 5rem;
-  overflow-x: auto; /* Add horizontal scroll for small screens if needed */
+  overflow-x: auto;
 }
 
 .table-container table {
@@ -12,7 +9,8 @@
   border: 1px solid black;
 }
 
-.table-container th, .table-container td {
+.table-container th,
+.table-container td {
   border: 1px solid black;
   padding: 12px;
   text-align: left;
@@ -20,14 +18,13 @@
 
 .table-container td {
   white-space: inherit;
-  font-size: x-small;
+  font-size: medium;
 }
 
 .table-container th {
   background-color: bisque;
 }
 
-/* Optional: Add styling for action buttons */
 .table-container button {
   margin-right: 5px;
   padding: 5px 10px;
@@ -42,7 +39,7 @@
   cursor: pointer;
   margin-right: 10px;
   font-size: 18px;
-  color: #e74c3c; /* Adjust the color as needed */
+  color: #e74c3c;
 }
 
 .table-container .delete-confirmation {
@@ -64,19 +61,19 @@
   margin-right: 10px;
 }
 
-/* Media query for smaller screens */
 @media screen and (max-width: 600px) {
   .table-container {
-    overflow-x: auto; /* Add horizontal scroll for small screens if needed */
+    overflow-x: auto;
   }
 
   .table-container table {
-    display: block; /* Stack table cells vertically */
+    display: block;
   }
 
-  .table-container th, .table-container td {
-    display: block; /* Stack table cells vertically */
-    width: 100%; /* Full width for small screens */
+  .table-container th,
+  .table-container td {
+    display: block;
+    width: 100%;
     box-sizing: border-box;
   }
 
