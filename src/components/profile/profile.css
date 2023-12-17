@@ -31,3 +31,13 @@ button {
 button:hover {
   background-color: #ffeaa7;
 }
+
+.profiles-h1{
+  margin-top: 50px;
+  text-align: center;
+  background-color: bisque;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  padding: 6px;
+  font-size: 1.6rem;
+}

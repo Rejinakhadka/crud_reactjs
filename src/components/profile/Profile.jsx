@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 import "./profile.css";
 
 const Profiles = () => {
@@ -15,9 +16,17 @@ const Profiles = () => {
     navigate("/", { state: { editIndex: index, formData } });
   };
 
+  const navigateToHome = () => {
+    navigate("/");
+  };
+
   return (
     <div>
-      <h1>Profiles:</h1>
+      <div className="home-icon" onClick={navigateToHome}>
+        <FaHome style={{ fontSize: "34px", marginRight: "8px" }} />
+        Back
+      </div>
+      <div className="profiles-h1">Profiles:</div>
       <div className="profile-container">
         {formData.map((profile, index) => (
           <div className="profile-card" key={index}>
