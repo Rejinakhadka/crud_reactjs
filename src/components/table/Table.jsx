@@ -51,11 +51,7 @@ const Table = ({ formData, onDelete, onEdit, onSort }) => {
                   <td>{data.name}</td>
                   <td>{data.email}</td>
                   <td>{data.phoneNumber}</td>
-                  <td>
-                    {data.dob instanceof Date
-                      ? data.dob.toLocaleDateString()
-                      : data.dob}
-                  </td>
+                  <td>{data.dob}</td>
                   <td>{data.city}</td>
                   <td>{data.district}</td>
                   <td>{data.province}</td>

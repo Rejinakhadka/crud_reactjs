@@ -6,8 +6,16 @@ import { useNavigate, useLocation } from "react-router-dom";
 import FormFields from "../form/FormFields";
 
 const Home = () => {
-  const { handleSubmit, register, setValue, getValues, reset, formState: { errors } } = useForm();
-  const [formData, setFormData] = useState(() => {  //this is for to manage state of formdata
+  const {
+    handleSubmit,
+    register,
+    setValue,
+    getValues,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const [formData, setFormData] = useState(() => {
+    //this is for to manage state of formdata
     try {
       const storedData = localStorage.getItem("formData");
       return storedData ? JSON.parse(storedData) : [];
@@ -20,7 +28,7 @@ const Home = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  //THIS IS FOR PROFILE  EDIT WHEN IT NAVIGATES BACK TO / PAGE TO UPDATE FORM 
+  //THIS IS FOR PROFILE  EDIT WHEN IT NAVIGATES BACK TO / PAGE TO UPDATE FORM
   useEffect(() => {
     const { state } = location;
     if (state && state.editIndex !== undefined) {
@@ -39,7 +47,6 @@ const Home = () => {
     } else {
       reset();
       setEditIndex(null);
-     
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location, setValue, reset]);
@@ -58,6 +65,7 @@ const Home = () => {
     } else {
       setFormData((prevData) => [...prevData, data]);
     }
+
     event.target.reset();
   };
 

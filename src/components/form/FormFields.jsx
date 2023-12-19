@@ -70,19 +70,7 @@ const FormFields = ({ register, errors, setValue }) => {
 
       <div>
         <label>DOB:</label>
-        <input
-          {...register("dob")}
-          type="text"
-          pattern="\d*[/]?\d*[/]?\d*"
-          placeholder="MM/dd/yyyy"
-          onInput={(e) => {
-            e.currentTarget.value = e.currentTarget.value.replace(
-              /[^\d/]/g,
-              ""
-            );
-            setValue("dob", e.currentTarget.value || null);
-          }}
-        />
+        <input {...register("dob")} type="date" placeholder="MM/dd/yyyy" />
         <span>{errors.dob?.message}</span>
       </div>
 
@@ -101,7 +89,11 @@ const FormFields = ({ register, errors, setValue }) => {
 
       <div>
         <label>Country:</label>
-        <input {...register("country")} placeholder="Enter your country" defaultValue="Nepal"/>
+        <input
+          {...register("country")}
+          placeholder="Enter your country"
+          defaultValue="Nepal"
+        />
       </div>
     </>
   );
