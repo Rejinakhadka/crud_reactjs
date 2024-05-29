@@ -1,5 +1,6 @@
 import React from "react";
 import "./form.css";
+import { Input } from "antd";
 
 const provincesOptions = [
   "Province 1",
@@ -11,7 +12,7 @@ const provincesOptions = [
   "Sudurpashchim",
 ];
 
-const FormFields = ({ register, errors, setValue }) => {
+const FormFields = ({ register, errors }) => {
   return (
     <>
       <div>
@@ -55,7 +56,7 @@ const FormFields = ({ register, errors, setValue }) => {
           Phone Number:<span>*</span>
         </label>
         <input
-          {...register("phoneNumber", {
+          {...register("phone", {
             required: "Phone number is required",
             pattern: {
               value: /[0-9]{7,}/,
@@ -65,7 +66,7 @@ const FormFields = ({ register, errors, setValue }) => {
           placeholder="Enter your phone number"
           required
         />
-        <span>{errors.phoneNumber?.message}</span>
+        <span>{errors.phone?.message}</span>
       </div>
 
       <div>

@@ -32,9 +32,8 @@ const Profiles = () => {
           <div className="profile-card" key={index}>
             <h2>{profile.name}</h2>
             <p>Email: {profile.email}</p>
-            <p>Phone Number: {profile.phoneNumber}</p>
+            <p>Phone Number: {profile.phone}</p>
             <p>Dob:{profile.dob}</p>
-
             <p>City: {profile.city}</p>
             <p>District: {profile.district}</p>
             <p>Province: {profile.province}</p>

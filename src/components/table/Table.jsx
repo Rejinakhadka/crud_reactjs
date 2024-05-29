@@ -1,29 +1,16 @@
-import { useState } from "react";
+import React from "react";
 import { FaSort, FaTrash, FaEdit, FaInbox } from "react-icons/fa";
 import "./table.css";
 
-const Table = ({ formData, onDelete, onEdit, onSort }) => {
-  const [deleteIndex, setDeleteIndex] = useState(null);
-
-  const confirmDelete = (index) => {
-    setDeleteIndex(index);
-  };
-
-  const cancelDelete = () => {
-    setDeleteIndex(null);
-  };
-
-  const deleteRecord = () => {
-    onDelete(deleteIndex);
-    setDeleteIndex(null);
-  };
-
-  const handleEdit = (index) => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    onEdit(index);
-  };
-
+const TableData = ({
+  formData,
+  handleEdit,
+  handleDelete,
+  deleteIndex,
+  confirmDelete,
+  cancelDelete,
+  handleSort,
+}) => {
   return (
     <div className="table-container">
       <h2>Submitted Form Data:</h2>
@@ -31,9 +18,10 @@ const Table = ({ formData, onDelete, onEdit, onSort }) => {
         <table>
           <thead>
             <tr>
-              <th onClick={onSort}>
-                Name <FaSort />
+              <th>
+                Name <FaSort onClick={handleSort} />
               </th>
+
               <th>Email </th>
               <th>Phone Number </th>
               <th>DOB </th>
@@ -50,7 +38,7 @@ const Table = ({ formData, onDelete, onEdit, onSort }) => {
                 <tr key={index}>
                   <td>{data.name}</td>
                   <td>{data.email}</td>
-                  <td>{data.phoneNumber}</td>
+                  <td>{data.phone}</td>
                   <td>{data.dob}</td>
                   <td>{data.city}</td>
                   <td>{data.district}</td>
@@ -62,7 +50,7 @@ const Table = ({ formData, onDelete, onEdit, onSort }) => {
                       className="action-icon"
                     />
                     <FaTrash
-                      onClick={() => confirmDelete(index)}
+                      onClick={() => handleDelete(index)}
                       className="action-icon"
                     />
                   </td>
@@ -80,7 +68,7 @@ const Table = ({ formData, onDelete, onEdit, onSort }) => {
         {deleteIndex !== null && (
           <div className="delete-confirmation">
             <p>Are you sure you want to delete this record?</p>
-            <button onClick={deleteRecord}>Yes</button>
+            <button onClick={confirmDelete}>Yes</button>
             <button onClick={cancelDelete}>No</button>
           </div>
         )}
@@ -89,4 +77,4 @@ const Table = ({ formData, onDelete, onEdit, onSort }) => {
   );
 };
 
-export default Table;
+export default TableData;
